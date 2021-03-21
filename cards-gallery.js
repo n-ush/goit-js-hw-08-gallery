@@ -29,10 +29,12 @@ const imageOriginal = document.querySelector("ul.js-gallery");
 const modalRef = document.querySelector(".js-lightbox");
 const modalImg = document.querySelector(".lightbox__image");
 const btnClose = document.querySelector(".lightbox__button");
+const overlayRef = document.querySelector(".lightbox__overlay");
 
 imageOriginal.addEventListener("click", openOriginalImage);
 modalRef.addEventListener("click", openOriginalImage);
 btnClose.addEventListener("click", closeModal);
+overlayRef.addEventListener("click", closeModal);
 
 function openOriginalImage(event) {
   event.preventDefault();
@@ -47,9 +49,9 @@ function openOriginalImage(event) {
 }
 
 function closeModal(event) {
-  if (event.target.nodeName !== "BUTTON") {
-    return;
+  if (event.target.nodeName === "BUTTON" || event.target !== modalRef) {
+    modalRef.classList.remove("is-open");
   }
-  modalRef.classList.remove("is-open");
+
   imageOriginal.src = "";
 }
