@@ -37,7 +37,7 @@ btnClose.addEventListener("click", closeModal);
 function openOriginalImage(event) {
   event.preventDefault();
 
-  if (event.target.nodeName !== "IMG") {
+  if (!event.target.classList.contains("gallery__image")) {
     return;
   }
   const imgOriginal = event.target.dataset.source;
