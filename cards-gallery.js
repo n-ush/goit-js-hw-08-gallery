@@ -51,7 +51,6 @@ function openOriginalImage(event) {
 function closeModal(event) {
   if (event.target.nodeName === "BUTTON" || event.target !== modalRef) {
     modalRef.classList.remove("is-open");
+    imageOriginal.src = "";
   }
-
-  imageOriginal.src = "";
 }
