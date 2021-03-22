@@ -47,7 +47,6 @@ function openOriginalImage(event) {
   modalRef.classList.add("is-open");
   modalImg.setAttribute("src", imgOriginal);
   modalImg.setAttribute("alt", altOriginal);
-  console.log(modalImg);
 }
 
 function closeModal(event) {
