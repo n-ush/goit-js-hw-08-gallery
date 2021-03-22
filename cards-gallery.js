@@ -43,14 +43,15 @@ function openOriginalImage(event) {
     return;
   }
   const imgOriginal = event.target.dataset.source;
-
+  const altOriginal = event.target.alt;
   modalRef.classList.add("is-open");
   modalImg.setAttribute("src", imgOriginal);
+  modalImg.setAttribute("alt", altOriginal);
 }
 
 function closeModal(event) {
   if (event.target.nodeName === "BUTTON" || event.target !== modalRef) {
     modalRef.classList.remove("is-open");
-    imageOriginal.src = "";
+    modalImg.src = "";
   }
 }
